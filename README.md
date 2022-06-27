@@ -8,10 +8,10 @@ but each version aligns with the following tags (ie, `jellydn/alpine-nodejs:<tag
 _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `16`, `16.4`, `16.15.1` – 86.89 MB (npm 7.19.1, yarn 1.22.10)
+  - `latest`, `16`, `16.15`, `16.15.1` – 86.89 MB (npm 7.19.1, yarn 1.22.10)
   - `14`, `14.19`, `14.19.3` – 59.36 MB (npm 6.14.13, yarn 1.22.10)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-16`, `slim-16.4`, `slim-16.15.1` – 63.04 MB
+  - `slim`, `slim-16`, `slim-16.15`, `slim-16.15.1` – 63.04 MB
   - `slim-14`, `slim-14.19`, `slim-14.19.3` – 58.21 MB
 
 ## Examples
