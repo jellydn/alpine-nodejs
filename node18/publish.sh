@@ -6,4 +6,9 @@ for tag in 18.4.0 18.4 18 slim-18.4.0 slim-18.4 slim-18; do
   docker push jellydn/alpine-nodejs:$tag
 done
 
+# Push the latest
+git tag -f latest
+git push -f origin latest
+docker tag jellydn/alpine-nodejs:18 jellydn/alpine-nodejs:latest
+
 git push

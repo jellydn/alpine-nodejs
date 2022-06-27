@@ -8,9 +8,9 @@ but each version aligns with the following tags (ie, `jellydn/alpine-nodejs:<tag
 _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `18`, `18.4`, `18.4.0` – 62.02 MB (npm 8.12.1, yarn 1.22.10)
-  - `16`, `16.15`, `16.15.1` – 55.89 MB (npm 7.19.1, yarn 1.22.10)
-  - `14`, `14.19`, `14.19.3` – 59.32 MB (npm 6.14.13, yarn 1.22.10)
+  - `latest`, `18`, `18.4`, `18.4.0` – 62.02 MB (npm 8.13.1, yarn 1.22.10)
+  - `16`, `16.15`, `16.15.1` – 55.89 MB (npm 7.24.2, yarn 1.22.10)
+  - `14`, `14.19`, `14.19.3` – 59.32 MB (npm 6.14.17, yarn 1.22.10)
 - Slim install with no npm or yarn:
   - `slim`, `slim-18`, `slim-18.4`, `slim-18.4.0` – 65.49 MB
   - `slim-16`, `slim-16.15`, `slim-16.15.1` – 63.04 MB
@@ -19,6 +19,9 @@ _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of th
 ## Examples
 
 ```console
+$ docker run --rm jellydn/alpine-nodejs node --version
+v18.4.0
+
 $ docker run --rm jellydn/alpine-nodejs:14 node --version
 v14.19.3
 
