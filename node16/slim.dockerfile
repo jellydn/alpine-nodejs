@@ -1,6 +1,3 @@
-# FROM jellydn/alpine-nodejs:14
-# FROM alpine:3.11
-
 FROM jellydn/alpine-nodejs:16
 FROM alpine:3.13
 

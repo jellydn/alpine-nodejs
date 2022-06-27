@@ -1,8 +1,5 @@
-# FROM alpine:3.11
-# ENV VERSION=v14.19.3 NPM_VERSION=6 YARN_VERSION=v1.22.10
-
-FROM alpine:3.13
-ENV VERSION=v16.15.1 NPM_VERSION=7 YARN_VERSION=v1.22.10
+FROM alpine:3.11
+ENV VERSION=v14.19.3 NPM_VERSION=6 YARN_VERSION=v1.22.19
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl gnupg libstdc++
