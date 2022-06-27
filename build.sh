@@ -1,8 +1,8 @@
 #/bin/sh
 
 docker build --pull --squash \
-  -t mhart/alpine-node:12.22.3 \
-  -t mhart/alpine-node:12.22 \
-  -t mhart/alpine-node:12 \
+  -t jellydn/alpine-nodejs:12.22.12 \
+  -t jellydn/alpine-nodejs:12.22 \
+  -t jellydn/alpine-nodejs:12 \
   -f extract.dockerfile \
   .
