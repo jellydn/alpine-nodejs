@@ -8,11 +8,11 @@ but each version aligns with the following tags (ie, `jellydn/alpine-nodejs:<tag
 _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `16`, `16.4`, `16.15.1` – 108 MB (npm 7.19.1, yarn 1.22.10)
-  - `14`, `14.17`, `14.19.3` – 109 MB (npm 6.14.13, yarn 1.22.10)
+  - `latest`, `16`, `16.4`, `16.15.1` – 86.89 MB (npm 7.19.1, yarn 1.22.10)
+  - `14`, `14.17`, `14.19.3` – 59.36 MB (npm 6.14.13, yarn 1.22.10)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-16`, `slim-16.4`, `slim-16.15.1` – 78.1 MB
-  - `slim-14`, `slim-14.17`, `slim-14.19.3` – 73.9 MB
+  - `slim`, `slim-16`, `slim-16.4`, `slim-16.15.1` – 63.04 MB
+  - `slim-14`, `slim-14.17`, `slim-14.19.3` – 58.21 MB
 
 ## Examples
 
@@ -20,8 +20,8 @@ _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of th
 $ docker run --rm jellydn/alpine-nodejs:14 node --version
 v14.19.3
 
-$ docker run --rm jellydn/alpine-nodejs:slim-14 node --version
-v14.19.3
+$ docker run --rm jellydn/alpine-nodejs:slim-16 node --version
+v16.15.1
 
 ```
 
@@ -64,7 +64,7 @@ If you can't do multi-stage builds, then you can just do everything on a "full
 install" image:
 
 ```Dockerfile
-FROM jellydn/alpine-nodejs:12
+FROM jellydn/alpine-nodejs:14
 
 # If possible, run your container using `docker run --init`
 # Otherwise, you can use `tini`:
