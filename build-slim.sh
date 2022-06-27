@@ -1,6 +1,6 @@
 #/bin/sh
 
-docker build --squash \
+docker build \
   -t jellydn/alpine-nodejs:slim-12.22.12 \
   -t jellydn/alpine-nodejs:slim-12.22 \
   -t jellydn/alpine-nodejs:slim-12 \
