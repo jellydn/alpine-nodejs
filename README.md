@@ -1,6 +1,6 @@
 ## Minimal Node.js Docker Images
 
-Versions v16.15.1, v14.19.3, v12.22.12, v10.24.1, v8.17.0, v6.17.1, v4.9.1, v0.12.18 and v0.10.48 –
+Versions v16.15.1, v14.19.3
 built on [Alpine Linux](https://alpinelinux.org/).
 
 All versions use the one [jellydn/alpine-nodejs](https://hub.docker.com/r/jellydn/alpine-nodejs/) repository,
@@ -10,21 +10,9 @@ _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of th
 - Full install built with npm and yarn:
   - `latest`, `16`, `16.4`, `16.15.1` – 108 MB (npm 7.19.1, yarn 1.22.10)
   - `14`, `14.17`, `14.19.3` – 109 MB (npm 6.14.13, yarn 1.22.10)
-  - `12`, `12.22`, `12.22.12` – 80.4 MB (npm 6.14.13, yarn 1.22.10)
-  - `10`, `10.24`, `10.24.1` – 73.1 MB (npm 6.14.12, yarn 1.22.10)
-  - `8`, `8.17`, `8.17.0` – 67.8 MB (npm 6.14.11, yarn 1.22.10)
-- Full install build with npm:
-  - `6`, `6.17`, `6.17.1` – 49 MB (npm 3.10.10)
-  - `4`, `4.9`, `4.9.1` – 35.2 MB (npm 2.15.12)
-  - `0.12`, `0.12.18` – 32.4 MB (npm 2.15.12)
-  - `0.10`, `0.10.48` – 27.8 MB (npm 2.15.12)
 - Slim install with no npm or yarn:
   - `slim`, `slim-16`, `slim-16.4`, `slim-16.15.1` – 78.1 MB
   - `slim-14`, `slim-14.17`, `slim-14.19.3` – 73.9 MB
-  - `slim-12`, `slim-12.22`, `slim-12.22.12` – 46.9 MB
-  - `slim-10`, `slim-10.24`, `slim-10.24.1` – 41.3 MB
-  - `slim-8`, `slim-8.17`, `slim-8.17.0` – 37.2 MB
-  - `slim-6`, `slim-6.17`, `slim-6.17.1` – 32.5 MB
 
 ## Examples
 
@@ -32,20 +20,9 @@ _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of th
 $ docker run --rm jellydn/alpine-nodejs:14 node --version
 v14.19.3
 
-$ docker run --rm jellydn/alpine-nodejs:12 node --version
-v12.22.12
-
-$ docker run --rm jellydn/alpine-nodejs:14 npm --version
-6.14.13
-
-$ docker run --rm jellydn/alpine-nodejs:14 yarn --version
-1.22.10
-
 $ docker run --rm jellydn/alpine-nodejs:slim-14 node --version
 v14.19.3
 
-$ docker run --rm jellydn/alpine-nodejs:slim-12 node --version
-v12.22.12
 ```
 
 ## Example Dockerfile for your own Node.js project
@@ -60,7 +37,7 @@ image – this can reduce the size of your final image by ~35MB or so.
 
 ```Dockerfile
 # This stage installs our modules
-FROM jellydn/alpine-nodejs:12
+FROM jellydn/alpine-nodejs:14
 WORKDIR /app
 COPY package.json package-lock.json ./
 
@@ -70,7 +47,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --prod
 
 # Then we copy over the modules from above onto a `slim` image
-FROM jellydn/alpine-nodejs:slim-12
+FROM jellydn/alpine-nodejs:slim-14
 
 # If possible, run your container using `docker run --init`
 # Otherwise, you can use `tini`:

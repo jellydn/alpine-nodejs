@@ -1,22 +1,10 @@
-# FROM jellydn/alpine-nodejs:8
-# FROM alpine:3.6
-# ENV NPM_VERSION=6 YARN_VERSION=v1.22.10
-
-# FROM jellydn/alpine-nodejs:10
-# FROM alpine:3.7
-# ENV NPM_VERSION=6 YARN_VERSION=v1.22.10
-
-FROM jellydn/alpine-nodejs:12
-FROM alpine:3.9
-ENV NPM_VERSION=6 YARN_VERSION=v1.22.10
-
 # FROM jellydn/alpine-nodejs:14
 # FROM alpine:3.11
 # ENV NPM_VERSION=6 YARN_VERSION=v1.22.10
 
-# FROM jellydn/alpine-nodejs:16
-# FROM alpine:3.13
-# ENV NPM_VERSION=7 YARN_VERSION=v1.22.10
+FROM jellydn/alpine-nodejs:16
+FROM alpine:3.13
+ENV NPM_VERSION=7 YARN_VERSION=v1.22.10
 
 COPY --from=0 /usr/bin/node /usr/bin/
 COPY --from=0 /usr/lib/node_modules /tmp/node_modules
