@@ -2,34 +2,33 @@
 
 ## Minimal Node.js Docker Images
 
-Versions v18.4.0, v16.15.1, v14.19.3
+Versions v18.8.0, v16.17.0, v14.20.0
 built on [Alpine Linux](https://alpinelinux.org/).
-
 
 All versions use the one [jellydn/alpine-nodejs](https://hub.docker.com/r/jellydn/alpine-nodejs/) repository,
 but each version aligns with the following tags (ie, `jellydn/alpine-nodejs:<tag>`). The sizes are for the
 _unpacked_ images as reported by Docker – compressed sizes are about 1/3 of these:
 
 - Full install built with npm and yarn:
-  - `latest`, `18`, `18.4`, `18.4.0` – 62.02 MB (npm 8.13.1, yarn 1.22.10)
-  - `16`, `16.15`, `16.15.1` – 55.89 MB (npm 7.24.2, yarn 1.22.10)
-  - `14`, `14.19`, `14.19.3` – 59.32 MB (npm 6.14.17, yarn 1.22.10)
+  - `latest`, `18`, `18.8`, `18.8.0` – 62.02 MB (npm 8.13.1, yarn 1.22.10)
+  - `16`, `16.17`, `16.17.0` – 55.89 MB (npm 7.24.2, yarn 1.22.10)
+  - `14`, `14.20`, `14.20.0` – 59.32 MB (npm 6.14.17, yarn 1.22.10)
 - Slim install with no npm or yarn:
-  - `slim`, `slim-18`, `slim-18.4`, `slim-18.4.0` – 65.49 MB
-  - `slim-16`, `slim-16.15`, `slim-16.15.1` – 63.04 MB
-  - `slim-14`, `slim-14.19`, `slim-14.19.3` – 58.21 MB
+  - `slim`, `slim-18`, `slim-18.8`, `slim-18.8.0` – 65.49 MB
+  - `slim-16`, `slim-16.17`, `slim-16.17.0` – 63.04 MB
+  - `slim-14`, `slim-14.20`, `slim-14.20.0` – 58.21 MB
 
 ## Examples
 
 ```console
 $ docker run --rm jellydn/alpine-nodejs node --version
-v18.4.0
+v18.8.0
 
 $ docker run --rm jellydn/alpine-nodejs:14 node --version
-v14.19.3
+v14.20.0
 
 $ docker run --rm jellydn/alpine-nodejs:slim-16 node --version
-v16.15.1
+v16.17.0
 
 ```
 
@@ -88,6 +87,16 @@ COPY . .
 RUN npm ci --prod
 
 CMD ["node", "index.js"]
+```
+
+## How to build and publish images to Docker Hub
+
+```sh
+cd node14 # or node16/node18
+sh build-slim.sh
+sh build.sh
+sh build-tools.sh
+sh publish.sh
 ```
 
 ## Caveats
