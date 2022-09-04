@@ -93,8 +93,9 @@ CMD ["node", "index.js"]
 
 ```sh
 cd node14 # or node16/node18
-sh build-slim.sh
 sh build.sh
+sh build-slim.sh
+sh publish.sh
 sh build-tools.sh
 sh publish.sh
 ```
