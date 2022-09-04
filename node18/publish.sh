@@ -10,5 +10,6 @@ done
 git tag -f latest
 git push -f origin latest
 docker tag jellydn/alpine-nodejs:18 jellydn/alpine-nodejs:latest
+docker push jellydn/alpine-nodejs:latest
 
 git push
