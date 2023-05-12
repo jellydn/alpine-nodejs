@@ -1,6 +1,6 @@
 #/bin/sh
 
-for tag in 18.15.0 18.15 18 slim-18.15.0 slim-18.15 slim-18; do
+for tag in 18.16.0 18.16 18 slim-18.16.0 slim-18.16 slim-18; do
   git tag -f $tag
   git push -f origin $tag
   docker push jellydn/alpine-nodejs:$tag

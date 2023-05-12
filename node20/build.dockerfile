@@ -1,5 +1,5 @@
 FROM alpine:3.16
-ENV VERSION=v18.16.0 NPM_VERSION=9 YARN_VERSION=v1.22.19 NODE_BUILD_PYTHON=python3
+ENV VERSION=v20.1.0 NPM_VERSION=9 YARN_VERSION=v1.22.19 NODE_BUILD_PYTHON=python3
 
 RUN apk upgrade --no-cache -U && \
   apk add --no-cache curl make gcc g++ ${NODE_BUILD_PYTHON} linux-headers binutils-gold gnupg libstdc++

@@ -1,4 +1,4 @@
-FROM jellydn/alpine-nodejs:18
+FROM jellydn/alpine-nodejs:20
 FROM alpine:3.16
 ENV NPM_VERSION=9 YARN_VERSION=v1.22.19
 
